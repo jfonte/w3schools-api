@@ -23,13 +23,13 @@
 
 // new instance of httprequest?
 		var xmlhttp = new XMLHttpRequest();
-		var url = "./myTutorials.txt";
+		var url = "myTutorials.txt";
 
 // TODO: what does this do? define onready property?
 		xmlhttp.onreadystatechange = function(){
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
 			{
-				var myArr = JSON.parse(xml.responseText);
+				var myArr = JSON.parse(xmlhttp.responseText);
 				myFunction(myArr);
 			}
 		};
@@ -43,7 +43,7 @@
 		for (i = 0; i< arr.length;i++){
 			out += '<a href="' +arr[i].url+'">'+arr[i].display+'</a><br>';
 		}
-		document.getElementById("id01").innerHTML = out;
+		document.getElementById("id101").innerHTML = out;
 	}
 
 
